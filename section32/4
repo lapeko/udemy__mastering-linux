@@ -1,0 +1,13 @@
+#!/bin/bash
+
+declare -r green_bold_text="$(tput setaf 2 bold)"
+declare -r reset_text="$(tput sgr0)"
+
+read -p "Enter your name: " name
+
+echo "Hi ${green_bold_text}${name}${reset_text}!"
+
+read items < <(ls ~/Desktop | wc -l)
+echo "You have $items items in Your Desktop folder"
+
+echo '---------------------------------------'
