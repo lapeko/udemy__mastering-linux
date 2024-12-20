@@ -1,0 +1,5 @@
+#!/bin/bash
+
+read time rest < <(uptime)
+echo $time
+echo $(< ./lorem.txt) #same as $(cat ./lorem.txt)
