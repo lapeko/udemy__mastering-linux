@@ -1,0 +1,6 @@
+#!/bin/bash
+name='Vitali'
+
+echo "Hi, $name!"
+
+ls ~ | wc -l
