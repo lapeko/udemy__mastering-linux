@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+desktop_items=$(wc -l < <(ls ~/Desktop -Al))
+echo "You have $desktop_items items in your Desktop folder"
