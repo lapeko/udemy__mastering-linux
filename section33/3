@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+export ENV_CITY="New York"
+city="New York"
+
+source ./child.sh
