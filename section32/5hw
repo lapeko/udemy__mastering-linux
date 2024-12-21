@@ -1,0 +1,22 @@
+#!/bin/bash
+
+read cpu < <(uptime | awk '{print $9, $10, $11}')
+echo "Last 5 minutes CPU usage: $cpu"
+
+echo '---------------------------------------'
+echo '5 highest CPU loaded processes:'
+ps aux --sort=-%cpu | head -n +6 | awk '{print $2, $3}'
+
+echo '---------------------------------------'
+read disk_usage < <(df | awk '$6 == "/" {print $5}')
+echo "You use ${disk_usage} of your disk space"
+echo "You have $((100 - ${disk_usage%\%}))% free space on your disk"
+
+read available_memory < <(cat /proc/meminfo | grep MemAvailable | awk '{print $2, $3}')
+echo "You have $available_memory available memory on your system"
+
+vb_status=$(systemctl status vboxadd-service.service | grep "Active" | awk '{print $3}')
+echo "You virtual boc siervive is: $vb_status"
+
+ping=$(ping -c 4 8.8.8.8)
+echo "$ping"
