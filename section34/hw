@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+read -p "Enter a city: " city
+read -p "Enter f for fahrenheit: " fahrenheit
+
+weather=$(cat "./budapest.json" | jq --arg city "${city}" '.[] | select(.city == $city)')
+
+if [ -z "${weather}" ]; then
+    echo "The city \"${city}\" not found" >&2
+    exit 1
+fi
+
+temp=$(echo "${weather}" | jq '.temperature')
+
+echo -n "The temperature in ${city} is: "
+if [ "${fahrenheit}" == 'f' ]; then
+    temp_f=$(echo "scale=2; $temp * 9 / 5 + 32" | bc)
+    echo "${temp_f} F"
+else
+    echo "${temp} C"
+fi

@@ -1,0 +1,4 @@
+[
+    {"city":"Budapest","temperature":12,"prognosis":[{"day":"tomorrow","temperature":27},{"day":"in 2 days","temperature":33},{"day":"in 3 days","temperature":31}]},
+    {"city":"Warsaw","temperature":12,"prognosis":[{"day":"tomorrow","temperature":27},{"day":"in 2 days","temperature":33},{"day":"in 3 days","temperature":31}]}
+]
