@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+read -p "Enter people id: " id
+curl -s https://swapi.py4e.com/api/people/${id}/ | jq '{name: .name, height: .height}'
