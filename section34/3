@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo -n 'Enter an integer number: '
+read num
+
+echo "You entered this number: ${num//[^0-9]/}"
