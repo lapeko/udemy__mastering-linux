@@ -2,5 +2,6 @@
 
 export ENV_CITY="New York"
 city="New York"
+cur_directory=$(dirname -- "${BASH_SOURCES[0]}")
 
-source ./child.sh
+source "${cur_directory}/child.sh"
