@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+declare -i ivar=10
+# bed practice
+ivar="${ivar} + 1"
+echo "${ivar}"
+
+unset ivar
+declare ivar=10
+ivar="${ivar} + 1"
+echo "${ivar}"
+
+echo $((1 + 1))
