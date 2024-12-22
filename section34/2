@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+declare -i ivar=5
+x=5
+echo -n "Enter a number please: "
+read ivar
+
+echo "${ivar}"
