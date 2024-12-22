@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cur_dir=$(dirname -- "${BASH_SOURCES[0]}")
+awk '{ sum += $1; count += 1 } END { printf "%.2f\n", sum / count }' "${cur_dir}/numbers"
