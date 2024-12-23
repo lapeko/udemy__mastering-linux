@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+while getopts ":f:w" opt; do
+    case $opt in
+        f)
+            echo "Flag f is set with arg $OPTARG"
+            ;;
+        w)
+            echo "Flag w is set"
+            ;;
+        *)
+            echo "Unexpected flag $OPTARG" >&2
+            exit 1
+            ;;
+        esac  
+done
