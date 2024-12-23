@@ -4,5 +4,5 @@ hw='Hello world'
 [[ 'Hello world' == $hw ]]
 echo $?
 
-[[ '*.txt' == *.txt ]]
+[[ '2.txt' == *.txt ]]
 echo $?
