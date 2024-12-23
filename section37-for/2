@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+size=5
+
+for i in $(seq 1 $size); do
+    echo "$i"
+done
