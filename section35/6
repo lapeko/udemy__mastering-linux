@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+read -p "enter 1, 2 or 3: " num
+
+case "${num}" in
+    1)
+        echo "You've entered 1"
+        ;;
+    2)
+        ;&
+    3)
+        echo "You've entered 2 or 3"
+        ;;
+    [4-6])
+        echo "You've entered 4, 5 or 6"
+        ;;
+    *)
+        echo "Are you kidding me"
+        ;;
+esac
