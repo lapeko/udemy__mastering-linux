@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+declare -i errors_count=0
+declare -i iterator=0
+url=https://downloads.codingcoursestv.eu/055%20-%20bash/while/images/image-
+assets_path='../assets/'
+
+while (( errors_count < 10 )); do
+    (( iterator = iterator + 1 ))
+    if ! curl -fso "${assets_path}${iterator}.jpg" "${url}${iterator}.jpg"; then
+        (( errors_count = errors_count + 1 ))
+        echo "download error ${errors_count}"
+    else
+        errors_count=0
+        echo 'download success'
+    fi
+done
+
+echo "done"
