@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+declare -ix age
+read -p "enter your age: " age
+
+if [ $age -ge 18 ]; then
+    echo "ok"
+fi
+
+if (( age < 18 )); then
+    echo "Oh no. What a pity"
+fi
