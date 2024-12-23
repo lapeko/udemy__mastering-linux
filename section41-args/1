@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo "Path used to call the script: $0"
+echo "Passed arguments number: $#"
+echo "PID: $$"
+echo "All aruments: $@"
+echo "First arument: $1"
+
+while [ "$#" -gt 0 ]; do
+    echo "$1"
+    shift
+done
