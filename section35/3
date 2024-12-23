@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+read -p 'enter something: ' input;
+
+if [ -z "${input}" ]; then
+    echo 'The input is empty'
+elif [ -n "${input}" ]; then
+    echo 'The input is not empty'
+fi
