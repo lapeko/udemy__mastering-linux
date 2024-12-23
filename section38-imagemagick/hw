@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if ! command -v identify &>/dev/null || ! command -v convert &>/dev/null; then
+    echo "ImageMagick not installed. Please install it and try again."
+    exit 1
+fi
+
+sources=$(find ./assets/*[^thumbnail].jpg | sort)
+
+for source in $sources; do
+    read width height < <(identify -format "%w %h" "$source")
+
+    if (( width < 100 || height < 100 )); then continue; fi
+
+    thumb_path="${source//.jpg/}.thumbnail.jpg"
+
+    if [ ! -e "$thumb_path" ]; then
+        echo "Thumbnail creation $source -> $thumb_path"
+
+        if ! convert "$source" -resize 100x100 "$thumb_path"; then
+            echo "Error: Failed to create thumbnail for $source" >&2
+        fi
+    fi
+done
