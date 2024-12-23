@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+file_name=romeo.txt
+file_url=https://downloads.codingcoursestv.eu/055%20-%20bash/if/romeo.txt
+
+if [ ! -e "$file_name" ] && ! curl -fso "$file_name $file_url"; then
+    echo "download ${file_url} failed" >&2
+    exit 1
+fi
+
+cat $file_name | grep 'love' | wc -l
