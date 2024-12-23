@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+hw='Hello world'
+[[ 'Hello world' == $hw ]]
+echo $?
+
+[[ '*.txt' == *.txt ]]
+echo $?
