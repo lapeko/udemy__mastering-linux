@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 test_func() {
-    name='Eve'
+    local name='Eve'
     echo "Hello ${name}"
 }
 
