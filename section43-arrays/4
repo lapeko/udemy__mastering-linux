@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+declare -A fruits
+
+fruits[apple]=3
+fruits[banana]=5
+
+for key in "${!fruits[@]}"; do
+    echo -e "Fruit: ${key}.\tCount: ${fruits[$key]}"
+done
