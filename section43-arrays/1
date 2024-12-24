@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 arr=(1 2 3 4 5)
-arr2=(banana bread 'cut pineaple')
+arr2=(banana bread 'cut pineaple' pie)
 
 echo "${arr[1]}"
 echo "${arr[-1]}"
@@ -10,3 +10,4 @@ arr2+=('grape')
 unset arr2[0]
 echo "${arr2[*]}"
 echo "${#arr2[@]}" # "*" and "@" same
+echo "${arr2[@]:1:2}"
