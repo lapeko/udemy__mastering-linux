@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+greet() {
+    read name
+    echo "Hi, $name"
+}
+
+echo 'Olya' | greet
