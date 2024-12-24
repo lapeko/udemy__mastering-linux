@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+folders=(
+    "${HOME}/Desktop"
+    "${HOME}/Downloads"
+    "${HOME}/Documents"
+)
+
+total_size=0
+for folder in "${folders[@]}"; do
+    read size path < <(du -sm "$folder")
+    if [[ size -gt 0 ]]; then
+        (( total_size = total_size + size ))
+        echo -e "The size of ${path} is:\t${size} MB"
+    fi
+done
+echo "Total size of these folders is: ${total_size} MB"
