@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+read -p "Enter fruits splitting by comma: " text
+old_ifs="$IFS"
+IFS=','
+read -ra fruits <<< "$text"
+IFS="$old_ifs"
+
+echo "Sise: ${#fruits[@]}"
+echo "Fruits: ${fruits[@]}"
