@@ -9,9 +9,10 @@ echo -e 'global execution end...\n'
 test_func() {
     echo 'function execution start...'
     echo "All args: $*"
-    echo "Received arg1: $1"
-    echo "Received arg2: $2"
-    echo 'function execution end...'
+    echo "Received arg1: ${1:-'Default'}"
+    echo "Received arg2: ${2:-'Default 2'}"
+    echo -e 'function execution end...\n'
 }
 
 test_func Arg1 Arg2
+test_func
