@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+test_func() {
+    name='Eve'
+    echo "Hello ${name}"
+}
+
+echo "Before call \$name: $name"
+test_func
+echo "After call \$name: $name"
