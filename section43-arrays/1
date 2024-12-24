@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+arr=(1 2 3 4 5)
+arr2=(banana bread 'cut pineaple')
+
+echo "${arr[1]}"
+echo "${arr[-1]}"
+arr2[1]=tomato
+arr2+=('grape')
+unset arr2[0]
+echo "${arr2[*]}"
+echo "${#arr2[@]}" # "*" and "@" same
