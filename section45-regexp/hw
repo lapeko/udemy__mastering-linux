@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+get_success_count=$(grep -Ec '" 200 [0-9]' access.log)
+echo -e "You have $get_success_count success requests\n"
+
+get_zip_count=$(grep -Ec 'GET.*\.zip' access.log)
+echo -e "You have $get_zip_count .zip requests\n"
+
+duplicates=$(grep -Eo '(^([0-9]+\.){3}[0-9]+|^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4})' access.log  | sort | uniq -d | wc -l)
+echo -e "You have $duplicates duplicate IPs\n"
+
+most_popular_url=$(grep 'Firefox' access.log | awk '{print $7}' | sort | uniq -c | sort -rn | head -n 1 | awk '{print $2}')
+echo "Most popular request: $most_popular_url"
